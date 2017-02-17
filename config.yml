@@ -1,0 +1,28 @@
+- name: Vision
+  ip: 127.0.0.1
+  params:
+    width: 640
+    height: 480
+  ports:
+    control: 6000
+    streaming: 5001
+- name: Driver
+  ip: 10.10.72.11
+  params:
+    awb: yes
+    expmode: 1
+    width: 1296
+    height: 972
+  ports:
+    control: 6000
+    streaming: 5002
+- name: Gear
+  ip: 10.10.72.11
+  params:
+    awb: yes
+    expmode: 1
+    width: 640
+    height: 480
+  ports:
+    control: 6001
+    stream: 5003
