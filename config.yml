@@ -5,7 +5,7 @@
     height: 480
   ports:
     control: 6000
-    streaming: 5001
+    stream: 5001
 - name: Driver
   ip: 10.10.72.11
   params:
@@ -15,7 +15,7 @@
     height: 972
   ports:
     control: 6000
-    streaming: 5002
+    stream: 5002
 - name: Gear
   ip: 10.10.72.11
   params:
