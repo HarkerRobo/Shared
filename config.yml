@@ -1,11 +1,19 @@
-- name: Vision
+# This document describes the configurations for the different streams that will
+# be displayed on the driver station. It is used both by the Raspberry Pis for
+# configuring their streams as well as the Silly Dashboard for connecting to the
+# streams.
+
+# For information on ports, see R64 and R65
+
+- name: Vision # This one is currently not used
   ip: 127.0.0.1
   params:
     width: 640
     height: 480
   ports:
-    control: 6000
-    stream: 5001
+    control: 5800 # Port used to start/stop stream, set camera params on the fly
+    stream: 5805 # Port that the driver station receives video on
+
 - name: Driver
   ip: 10.10.72.11
   params:
@@ -14,8 +22,9 @@
     width: 1296
     height: 972
   ports:
-    control: 6000
-    stream: 5002
+    control: 5801
+    stream: 5806
+
 - name: Gear
   ip: 10.10.72.11
   params:
@@ -24,5 +33,5 @@
     width: 640
     height: 480
   ports:
-    control: 6001
-    stream: 5003
+    control: 5802
+    stream: 5807
