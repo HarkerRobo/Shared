@@ -6,7 +6,7 @@
 # For information on ports, see R64 and R65
 
 - name: Vision # This one is currently not used
-  ip: 127.0.0.1
+  ip: '127.0.0.1'
   params:
     width: 640
     height: 480
@@ -15,7 +15,7 @@
     stream: 5805 # Port that the driver station receives video on
 
 - name: Driver
-  ip: 10.10.72.11
+  ip: '10.10.72.11'
   params:
     awb: yes
     expmode: 1
@@ -26,7 +26,7 @@
     stream: 5806
 
 - name: Gear
-  ip: 10.10.72.11
+  ip: '10.10.72.11'
   params:
     awb: yes
     expmode: 1
