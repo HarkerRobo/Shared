@@ -19,8 +19,8 @@
   params:
     awb: yes
     expmode: 1
-    width: 640
-    height: 480
+    width: 1296
+    height: 972
   ports:
     control: 5801
     stream: 5806
