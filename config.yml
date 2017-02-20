@@ -13,6 +13,24 @@
   ports:
     control: 5800 # Port used to start/stop stream, set camera params on the fly
     stream: 5805 # Port that the driver station receives video on
+  logging: &logger
+    formatters:
+      simple:
+        format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+    handlers:
+      console:
+        class: logging.StreamHandler
+        level: DEBUG
+        formatter: simple
+        stream: ext://sys.stdout
+    loggers:
+      root:
+        level: ERROR
+        handlers: [console]
+        propagate: no
+    root:
+      level: INFO
+      handlers: [console]
 
 - name: Driver
   ip: '10.10.72.11'
@@ -24,6 +42,7 @@
   ports:
     control: 5801
     stream: 5806
+  logging: *logger
 
 - name: Gear
   ip: '10.10.72.11'
@@ -36,3 +55,4 @@
   ports:
     control: 5802
     stream: 5807
+  logging: *logger
