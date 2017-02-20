@@ -13,24 +13,24 @@
   ports:
     control: 5800 # Port used to start/stop stream, set camera params on the fly
     stream: 5805 # Port that the driver station receives video on
-  logging: &logger
-    formatters:
+  logging:
+    version: 1
+    formatters: &formatters
       simple:
         format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
     handlers:
-      console:
+      console: &consolehandler
         class: logging.StreamHandler
-        level: DEBUG
+        level: INFO
         formatter: simple
         stream: ext://sys.stdout
-    loggers:
-      root:
-        level: INFO
-        handlers: [console]
-        propagate: no
-    root:
-      level: INFO
-      handlers: [console]
+      file:
+        class: FileHandler
+        formatter: simple
+        args: ['/var/log/streaming-vision.log', 'a']
+    root: &rootconfig
+      level: DEBUG
+      handlers: [console, file]
 
 - name: Driver
   ip: '10.10.72.11'
@@ -42,7 +42,16 @@
   ports:
     control: 5801
     stream: 5806
-  logging: *logger
+  logging:
+    version: 1
+    formatters: *formatters
+    handlers:
+      console: *consolehandler
+      file:
+        class: FileHandler
+        formatter: simple
+        args: ['/var/log/streaming-driver.log', 'a']
+    root: *rootconfig
 
 - name: Gear
   ip: '10.10.72.11'
@@ -55,4 +64,13 @@
   ports:
     control: 5802
     stream: 5807
-  logging: *logger
+  logging:
+    version: 1
+    formatters: *formatters
+    handlers:
+      console: *consolehandler
+      file:
+        class: FileHandler
+        formatter: simple
+        args: ['/var/log/streaming-gear.log', 'a']
+    root: *rootconfig
