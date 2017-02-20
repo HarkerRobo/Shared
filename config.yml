@@ -51,7 +51,7 @@
       file:
         class: logging.FileHandler
         formatter: simple
-        filename: /var/log/streaming-vision.log
+        filename: /var/log/streaming-driver.log
         mode: a
     root: *rootconfig
 
@@ -74,6 +74,6 @@
       file:
         class: logging.FileHandler
         formatter: simple
-        filename: /var/log/streaming-vision.log
+        filename: /var/log/streaming-gear.log
         mode: a
     root: *rootconfig
