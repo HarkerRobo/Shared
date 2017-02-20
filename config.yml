@@ -25,7 +25,7 @@
         formatter: simple
         stream: ext://sys.stdout
       file:
-        class: FileHandler
+        class: logging.FileHandler
         formatter: simple
         args: ['/var/log/streaming-vision.log', 'a']
     root: &rootconfig
@@ -48,7 +48,7 @@
     handlers:
       console: *consolehandler
       file:
-        class: FileHandler
+        class: logging.FileHandler
         formatter: simple
         args: ['/var/log/streaming-driver.log', 'a']
     root: *rootconfig
@@ -70,7 +70,7 @@
     handlers:
       console: *consolehandler
       file:
-        class: FileHandler
+        class: logging.FileHandler
         formatter: simple
         args: ['/var/log/streaming-gear.log', 'a']
     root: *rootconfig
