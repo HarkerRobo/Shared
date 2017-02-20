@@ -25,7 +25,7 @@
         stream: ext://sys.stdout
     loggers:
       root:
-        level: ERROR
+        level: INFO
         handlers: [console]
         propagate: no
     root:
