@@ -14,6 +14,7 @@
     control: 5800 # Port used to start/stop stream, set camera params on the fly
     stream: 5805 # Port that the driver station receives video on
   logging: &logger
+    version: 1 
     formatters:
       simple:
         format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
