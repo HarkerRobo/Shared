@@ -27,7 +27,8 @@
       file:
         class: logging.FileHandler
         formatter: simple
-        args: ['/var/log/streaming-vision.log', 'a']
+        filename: /var/log/streaming-vision.log
+        mode: a
     root: &rootconfig
       level: DEBUG
       handlers: [console, file]
@@ -50,7 +51,8 @@
       file:
         class: logging.FileHandler
         formatter: simple
-        args: ['/var/log/streaming-driver.log', 'a']
+        filename: /var/log/streaming-vision.log
+        mode: a
     root: *rootconfig
 
 - name: Gear
@@ -72,5 +74,6 @@
       file:
         class: logging.FileHandler
         formatter: simple
-        args: ['/var/log/streaming-gear.log', 'a']
+        filename: /var/log/streaming-vision.log
+        mode: a
     root: *rootconfig
