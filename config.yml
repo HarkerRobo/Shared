@@ -43,6 +43,8 @@
     expmode: 1
     width: 1296
     height: 972
+    bitrate: 0
+    quant_param: 34
   ports:
     control: 5801
     stream: 5806
